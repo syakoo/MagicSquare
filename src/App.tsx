@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./App.css";
 
 // 自作Componentのインポート
 import Count from "./Count";
