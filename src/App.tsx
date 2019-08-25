@@ -1,18 +1,18 @@
 import React, { useState } from "react";
+import { Switch } from "react-router";
+import { Redirect, Route } from "react-router-dom";
 
-// 自作Componentのインポート
-import Count from "./Count";
-import Increment from "./Increment";
+import { Game } from "./components/pages/Game";
+import { Home } from "./components/pages/Home";
 
-// 全体のComponent
+
 const App: React.FC = () => {
-  // ReactHookを使う
-  const [count, setCount] = useState(0);
-
   return (
     <div className="App">
-      <Count count={count} />
-      <Increment count={count} setCount={setCount} />
+      <Switch>
+        <Route exact path="/" component={Home}></Route>
+        <Route exact path="/game" component={Game}></Route>
+      </Switch>
     </div>
   );
 };
