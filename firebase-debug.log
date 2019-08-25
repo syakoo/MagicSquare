@@ -23,3 +23,32 @@
 [debug] [2019-08-25T08:57:43.267Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: build
 [info] +  hosting: Local server: http://localhost:5000
+[debug] [2019-08-25T09:49:12.684Z] ----------------------------------------------------------------------
+[debug] [2019-08-25T09:49:12.686Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\sakoo\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-08-25T09:49:12.686Z] CLI Version:   7.2.4
+[debug] [2019-08-25T09:49:12.686Z] Platform:      win32
+[debug] [2019-08-25T09:49:12.686Z] Node Version:  v10.16.0
+[debug] [2019-08-25T09:49:12.687Z] Time:          Sun Aug 25 2019 18:49:12 GMT+0900 (GMT+09:00)
+[debug] [2019-08-25T09:49:12.687Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-08-25T09:49:12.692Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-08-25T09:49:12.693Z] > authorizing via signed-in user
+[debug] [2019-08-25T09:49:12.693Z] [iam] checking project magicsquare-cb1cf for permissions ["firebase.projects.get"]
+[debug] [2019-08-25T09:49:12.694Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-08-25T09:49:12.694Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-08-25T09:49:12.968Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-25T09:49:13.176Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/magicsquare-cb1cf:testIamPermissions  
+
+[debug] [2019-08-25T09:49:14.301Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-25T09:49:14.302Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/magicsquare-cb1cf  
+ 
+[debug] [2019-08-25T09:49:15.090Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\sakoo\OneDrive\ドキュメント\workspace\Apps\magic_square'...
+[info] 
+[debug] [2019-08-25T09:49:15.094Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/magicsquare-cb1cf/webApps/-/config  
+ 
+[debug] [2019-08-25T09:49:16.236Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: build
+[info] +  hosting: Local server: http://localhost:5000
