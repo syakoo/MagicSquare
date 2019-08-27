@@ -13,10 +13,10 @@ export const MagicSquare: React.FC = () => {
       <ScoreBoard time={parseFloat(time)} state={state} setState={setState}/>
       <h2>{time}</h2>
       <Board
+        state={state}
         stateBoard={stateBoard}
         setStateBoard={setStateBoard}
       />
-      {state}
     </div>
   );
 };

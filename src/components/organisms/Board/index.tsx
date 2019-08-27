@@ -7,11 +7,13 @@ export type IState = "standby" | "playing" | "finished";
 export type IBoard = Cell[];
 
 export interface Board {
+  state: IState;
   stateBoard: IBoard;
   setStateBoard: Dispatch<IBoard>;
 }
 
 export const Board: React.FC<Board> = ({
+  state,
   stateBoard,
   setStateBoard
 }) => {
@@ -42,13 +44,19 @@ export const Board: React.FC<Board> = ({
   let rows = [];
   for (let i = 0; i < 3; i++) {
     rows.push(
-      <div className={styles.board_body} key={i}>
+      <div key={i}>
         {cells[i * 3 + 0]}
         {cells[i * 3 + 1]}
         {cells[i * 3 + 2]}
       </div>
     );
   }
+  console.log(rows);
 
-  return <div>{rows}</div>;
+  return (
+    <div className={styles.board_body}>
+      <div className={styles.board_hidden} style={(state==="playing")? { display : "none" }: {}}></div>
+      {rows}
+    </div>
+  );
 };

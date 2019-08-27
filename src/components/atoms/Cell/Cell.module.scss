@@ -8,12 +8,12 @@
     display: table-cell;
     vertical-align: middle;
     text-align: center;
-    border: 1px solid black;
+    border: 1px solid #2e7bff;
     cursor: pointer;
     user-select: none;
 
     &.static{
-      background-color: gray;  
+      background-color: #ccdfff;  
     }
 
     &.variable:hover{

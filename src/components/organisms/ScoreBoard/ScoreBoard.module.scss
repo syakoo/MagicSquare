@@ -9,7 +9,7 @@
 }
 
 .body{
-    padding: 2rem;
+    padding: 1rem;
     position: absolute;
     width: 50rem;
     z-index: 11;
@@ -17,4 +17,20 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
+}
+
+.title{
+    padding: 0.5rem;
+    font-size: 1.6rem;
+    border-bottom: 1px solid black;
+}
+
+.ranking_label{
+    font-size: 1.5rem;
+}
+
+.ranking{
+    font-size: 2rem;
+    padding: 0.5rem;
+    font-weight: bold;
 }

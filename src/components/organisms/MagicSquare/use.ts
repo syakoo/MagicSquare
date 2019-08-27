@@ -32,6 +32,13 @@ export const createBoard = (level = 3) => {
         answerState];
 }
 
+const clearAllInterval = (intervalIdArray: NodeJS.Timeout[]): NodeJS.Timeout[] => {
+    intervalIdArray.forEach(target => {
+        clearInterval(target);
+    });
+    return [];
+}
+
 function* readyCount() {
     yield "3";
     yield "2";
@@ -39,7 +46,7 @@ function* readyCount() {
 }
 
 let startTime = 0;
-let intervalId: NodeJS.Timeout;
+let intervalId: NodeJS.Timeout[] = [];
 let initialState: IBoard = [
     { value: 5, type: "static" },
     { value: 0, type: "variable" },
@@ -75,6 +82,7 @@ export const useMagicSquare = () => {
                 console.log("standby !!");
                 [initialState, answerState] = createBoard();
                 setStateBoard(initialState);
+                intervalId = clearAllInterval(intervalId);
                 let readyCounter = readyCount();
                 let id = setInterval(() => {
                     let val = readyCounter.next();
@@ -89,15 +97,15 @@ export const useMagicSquare = () => {
                 break;
             case "playing":
                 console.log("playing !!");
-                intervalId = setInterval(() => {
+                intervalId.push(setInterval(() => {
                     setTime((Math.round((Date.now() - startTime) / 100) / 10).toFixed(1));
-                }, 100);
+                }, 100));
                 console.log(intervalId);
                 break;
             case "finished":
                 console.log("finished !!", Date.now() - startTime);
-                clearInterval(intervalId);
                 setTime(((Date.now() - startTime) / 1000).toFixed(3));
+                intervalId = clearAllInterval(intervalId);
                 break;
         }
     }, [state]);

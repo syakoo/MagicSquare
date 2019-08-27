@@ -9,7 +9,6 @@ export const Game: React.FC<RouteComponentProps> = () => {
 
   return (
     <PageTemplate>
-      <h1>Game Page</h1>
       <MagicSquare />
     </PageTemplate>
   );
