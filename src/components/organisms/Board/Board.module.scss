@@ -1,12 +1,20 @@
+$COLOR_SCONDARY: #DBEDF0;
+
+.board_outline{
+    padding: 2px;
+    border: 4px solid $COLOR_SCONDARY;
+}
+
 .board_body{
     position: relative;
-    border: 1px solid #2e7bff;
+    padding: 2px;
+    border: 2px solid $COLOR_SCONDARY;
 }
 
 
 .board_hidden{
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
     background-color: rgba(0,0,0, 0.4);
 }

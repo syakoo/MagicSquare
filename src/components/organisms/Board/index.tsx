@@ -53,9 +53,14 @@ export const Board: React.FC<Board> = ({
   }
 
   return (
-    <div className={styles.board_body}>
-      <div className={styles.board_hidden} style={(state==="playing")? { display : "none" }: {}}></div>
-      {rows}
+    <div className={styles.board_outline}>
+      <div className={styles.board_body}>
+        <div
+          className={styles.board_hidden}
+          style={state === "playing" ? { display: "none" } : {}}
+        ></div>
+        {rows}
+      </div>
     </div>
   );
 };

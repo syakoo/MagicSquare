@@ -1,0 +1,31 @@
+$COLOR_SCONDARY: #DBEDF0;
+
+.normal{
+    position: absolute;
+    bottom: 0px;
+    fill: #4699CA;
+    cursor: pointer;
+    text{
+        color: $COLOR_SCONDARY;
+        font-size: 1.6rem;
+    }
+}
+
+.empha{
+    position: absolute;
+    bottom: 0px;
+    fill: #1760A0;
+    cursor: pointer;
+    text{
+        color: $COLOR_SCONDARY;
+        font-size: 3rem;
+    }
+}
+
+.left{
+    left: 0px;
+}
+
+.right{
+    right: 0px;
+}
