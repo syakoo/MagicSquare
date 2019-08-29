@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import useReactRouter from "use-react-router";
 
 import { IState, IBoard } from "../Board";
 import { IsGameFinished } from "../../../logics/util/board";
@@ -74,7 +75,7 @@ export const useMagicSquare = () => {
     const [state, setState] = useState<IState>("standby");
     const [time, setTime] = useState<string>("0");
     const [stateBoard, setStateBoard] = useState<IBoard>(initialState);
-
+    const { location } = useReactRouter();
 
     useEffect(() => {
         switch (state) {
@@ -114,6 +115,12 @@ export const useMagicSquare = () => {
         if (IsGameFinished(stateBoard, answerState)) setState("finished");
     }, [stateBoard]);
 
+    useEffect(()=>{
+        if(location.pathname=="/game"){
+            setState("standby");
+        }
+    },[location.pathname])
+    
 
     return {
         state,

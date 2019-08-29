@@ -1,5 +1,4 @@
 import React from "react";
-import { useEffect } from "react";
 import { RouteComponentProps } from "react-router";
 
 import { MagicSquare } from "../../organisms/MagicSquare"

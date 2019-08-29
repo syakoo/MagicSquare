@@ -1,6 +1,11 @@
 import React, { useState, Dispatch, useEffect } from "react";
 
-import { setScoreRanking, isUserExist, RankingOfAll} from "../../../logics/util/fireStore";
+import {
+  getScoreRanking,
+  isUserExist,
+  setScoreRanking,
+  rankingOfAll
+} from "../../../logics/util/fireStore";
 import { Button } from "../../atoms/Button";
 import { NameForm } from "../../molecules/NameForm";
 import { IState } from "../Board";
@@ -21,29 +26,35 @@ export const ScoreBoard: React.FC<IScoreBoard> = ({
   const [message, setMessage] = useState<string>("");
   const [ranking, setRanking] = useState<number>(0);
   const score = { name: name, time: time, date: new Date() };
+  let scoreRankingList = [{name: "Null", time: Infinity}];
 
-  useEffect(()=>{
-    if(name===""){
+  useEffect(() => {
+    if (name === "") {
       setMessage("名前を入力してください");
-    }else{
-      isUserExist(name).then((preTime)=>{
-        if(!preTime){
-          setMessage("");
-        }else{
-          setMessage(`記録...${preTime}`);
+    } else {
+      const preTime = isUserExist(name, scoreRankingList); 
+      if (!preTime) {
+        setMessage("");
+      } else {
+        setMessage(`記録...${preTime}`);
+      }
+    }
+  }, [name]);
+
+  useEffect(() => {
+    if (state === "finished") {
+      getScoreRanking().then((scoreRanking)=>{
+        scoreRankingList = scoreRanking;
+        const ranking = rankingOfAll(time, scoreRankingList);
+        if (!ranking) {
+          setRanking(Infinity);
+        } else {
+          setRanking(ranking);
         }
       });
     }
-  },[name]);
+  }, [state]);
 
-  RankingOfAll(time).then((ranking) => {
-    if(!ranking){
-      setRanking(Infinity);
-    }else{
-      setRanking(ranking);
-    }
-  })
-  
   return (
     <div
       className={styles.all}
@@ -52,7 +63,9 @@ export const ScoreBoard: React.FC<IScoreBoard> = ({
       <div className={styles.body}>
         <div className={styles.title}>ゲームクリア!!</div>
         <div>
-          <div className={styles.ranking_label}>第<span className={styles.ranking}>{ranking}</span>位</div>
+          <div className={styles.ranking_label}>
+            第<span className={styles.ranking}>{ranking}</span>位
+          </div>
           <div>Time : {time}</div>
           <NameForm name={name} setName={setName} />
           <small>{message}</small>
@@ -60,7 +73,7 @@ export const ScoreBoard: React.FC<IScoreBoard> = ({
         <Button
           label="記録する"
           onClick={() => {
-            setScoreRanking(score);
+            setScoreRanking(score, scoreRankingList);
             setState("standby");
           }}
         ></Button>

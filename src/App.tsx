@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { Switch } from "react-router";
-import { Redirect, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 
 import { Game } from "./components/pages/Game";
 import { Home } from "./components/pages/Home";

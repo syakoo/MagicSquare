@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Dispatch } from "react";
+import React, { Dispatch } from "react";
 
 import { Cell } from "../../atoms/Cell";
 import styles from "./Board.module.scss";
@@ -51,7 +51,6 @@ export const Board: React.FC<Board> = ({
       </div>
     );
   }
-  console.log(rows);
 
   return (
     <div className={styles.board_body}>
