@@ -15,7 +15,6 @@ export const Home: React.FC<RouteComponentProps> = () => {
   
   return (
     <PageTemplate>
-      <Button label="Game Start" onClick={handleToGamePage} isEmpha={true} />
       <Ranking />
     </PageTemplate>
   );

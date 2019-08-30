@@ -1,7 +1,8 @@
+$COLOR_PRIMARY: #002D5E;
 $COLOR_SCONDARY: #DBEDF0;
 
 .table_body {
-  padding-top: 2rem;
+  // padding-top: 2rem;
   text-align: -webkit-center;
 }
 
@@ -9,11 +10,14 @@ table {
   width: 100%;
   //   border-bottom: 1px solid black;
   margin-top: 1rem;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0px;
   text-align: center;
   cursor: pointer;
 }
-tbody{
+
+.tbody{
+  height: 60vh;
   overflow-y: scroll;
 }
 
@@ -23,72 +27,88 @@ tbody{
   font-weight: bold;
 }
 
-.date {
-  width: 20%;
-}
 
 tr{
-  margin: 5px;
-  border-radius: 2rem;
-  color: $COLOR_SCONDARY;
-  // background-color: $COLOR_SCONDARY;
+  padding: 0.2rem;
+  margin: 10px;
+  zoom:80%;
+  margin-left: 9%;
+  margin-right: 9%;
+  display: table;
+  border-radius: 5px;
+  color: $COLOR_PRIMARY;
+  background-color: #8DABC5;
+  font-weight: bold;
 }
 
-tr:nth-child(odd) {
-  // background-color: $COLOR_SCONDARY;
+tr td:nth-child(1) {
+  color: white;
+  width: 10%;
+}
+tr td:nth-child(2) {
+  width: 20%;
+}
+tr td:nth-child(3) {
+  width: 50%;
 }
 
 tr:nth-child(2) {
-  font-weight: bold;
-  color: gold;
-  // background-color: gold;
+  zoom: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
+  color: $COLOR_PRIMARY;
+  background-color: #4699CA;
   // color: $COLOR_SCONDARY;
-  // & > td:nth-child(1) {
-  //   color: gold;
-  // }
+  & > td:nth-child(1) {
+    color: $COLOR_PRIMARY;
+  }
 }
 
 tr:nth-child(3) {
-  font-weight: bold;
-  // background-color: silver;
-  color: silver;
-  // & > td:nth-child(1) {
-  //   color: silver;
-  // }
+  zoom: 95%;
+  margin-left: 3%;
+  margin-right: 3%;
+  color: $COLOR_PRIMARY;
+  background-color:#7FC1D0;
+  & > td:nth-child(1) {
+    color: #0089A8;
+  }
 }
 
 tr:nth-child(4) {
-  font-weight: bold;
-  color: #aa8420;
+  zoom: 90%;
+  margin-left: 6%;
+  margin-right: 6%;
+  color: $COLOR_PRIMARY;
+  background-color:$COLOR_SCONDARY;
   // background-color: #aa8420;
-  // & > td:nth-child(1) {
-  //   color: #aa8420;
-  // }
-}
-
-tr:nth-child(5),
-tr:nth-child(6),
-tr:nth-child(7),
-tr:nth-child(8),
-tr:nth-child(9),
-tr:nth-child(10),
-tr:nth-child(11) {
+  & > td:nth-child(1) {
+    color: #69CFE1;
+  }
 }
 
 th {
   // border: 1px solid #2562cc;
-  margin: 0px;
   background-color: #2e7bff;
   color: white;
 }
 
 td {
   padding: 0.2rem;
-  // border: 1px solid #2562cc;
-  margin: 0px;
 }
 
 .small{
   width: 6rem;
   font-size: 0.7rem;
+}
+
+thead tr{
+  zoom: 100%;
+  margin: 0px;
+  background-color: rgba(0,0,0,0);
+  color: $COLOR_SCONDARY;
+  opacity: 0.5;
+  & > td:nth-child(1) {
+    color: $COLOR_SCONDARY;
+  }
 }

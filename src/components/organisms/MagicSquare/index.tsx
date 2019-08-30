@@ -26,7 +26,7 @@ export const MagicSquare: React.FC = () => {
         stateBoard={stateBoard}
         setStateBoard={setStateBoard}
       />
-      <div className={styles.balloon_box}>
+      <div>
       <BalloonButton label="Restart" onClick={()=>{setState("standby")}} isEmpha={false} LorR="left"></BalloonButton>
       <BalloonButton label="Ranking" onClick={()=>{history.push("/")}} isEmpha={true} LorR="right"></BalloonButton>
       </div>

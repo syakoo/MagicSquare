@@ -1,22 +1,26 @@
 $COLOR_SCONDARY: #dbedf0;
 
 .normal {
-  position: fixed;
-  bottom: 0px;
-  fill: #4699ca;
-  cursor: pointer;
-  z-index: 11;
-  text {
-    color: $COLOR_SCONDARY;
-    font-size: 1.6rem;
-    -ms-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
+  svg{
+    position: fixed;
+    bottom: 0px;
+    fill: #4699ca;
+    cursor: pointer;
+    z-index: 11;
+    
+    text {
+      color: $COLOR_SCONDARY;
+      font-size: 1.6rem;
+      -ms-user-select: none;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+    circle {
+      r: 100px;
+      cy: 100px;
+    }
   }
-  circle {
-    r: 140px;
-    cy: 200px;
-  }
+  
   svg {
     transform: translate(0px, 4px);
   }
@@ -31,14 +35,14 @@ $COLOR_SCONDARY: #dbedf0;
 
   text {
     color: $COLOR_SCONDARY;
-    font-size: 3rem;
+    font-size: 2.3rem;
     -ms-user-select: none;
     -webkit-user-select: none;
     user-select: none;
   }
   circle {
     r: 180px;
-    cy: 200px;
+    cy: 180px;
   }
   svg {
     transform: translate(0px, 4px);
@@ -46,12 +50,14 @@ $COLOR_SCONDARY: #dbedf0;
 }
 
 .left {
-  left: 0px;
-  circle {
-    cx: 70px;
-  }
-  text {
-    transform: translate(20px, 120px);
+  svg{
+    left: 0px;
+    circle {
+      cx: 70px;
+    }
+    text {
+      transform: translate(30px, 100px);
+    }
   }
 }
 
