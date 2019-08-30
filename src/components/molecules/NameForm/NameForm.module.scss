@@ -1,0 +1,11 @@
+$COLOR_PRIMARY: #002D5E;
+
+.label{
+    color: $COLOR_PRIMARY;
+}
+
+.input{
+    border: 1px solid $COLOR_PRIMARY;
+    border-radius: 2px;
+    padding: 2px;
+}

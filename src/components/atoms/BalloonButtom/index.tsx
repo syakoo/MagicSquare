@@ -14,11 +14,11 @@ export const BalloonButton: React.FC<IBalloonButton> = ({
 }) => {
     
     return(
-        <div className={(isEmpha? styles.empha: styles.normal)} style={(LorR=="left")? {left: "0px"}: {right: "0px"}}>
+        <div className={(isEmpha? styles.empha: styles.normal) + " " + ((LorR==="left")? styles.left: styles.right)}>
             <svg xmlns="http://www.w3.org/2000/svg">
                 <g onClick={onClick} >
-                <circle cx={(LorR=="left")? "70": "200"} cy="200" r={(isEmpha)? "180": "140"}/>
-                <text transform={(LorR=="left")? "translate(20,120)": "translate(110,100)"} fill="#DBEDF0">{label}</text>
+                    <circle />
+                    <text fill="#DBEDF0">{label}</text>
                 </g>
             </svg>
         </div>

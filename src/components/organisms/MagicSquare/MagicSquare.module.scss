@@ -2,7 +2,6 @@ $COLOR_SCONDARY: #DBEDF0;
 
 .table{
     margin: 0 auto;
-    padding-top: 2rem;
     display: inline-block;
 }
 
@@ -12,4 +11,8 @@ $COLOR_SCONDARY: #DBEDF0;
     padding: 0.5rem;
     cursor: default;
 
+    span{
+        padding-right: 1rem;
+        font-size: 1.5rem;
+    }
 }

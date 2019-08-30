@@ -1,5 +1,4 @@
 $COLOR_PRIMARY: #002D5E;
-$COLOR_SCONDARY: #DBEDF0;
 
 .all{
     position:fixed;
@@ -10,6 +9,7 @@ $COLOR_SCONDARY: #DBEDF0;
     left: 0px;
     background-color: rgba(0,0,0, 0.5);
 }
+
 @media screen and (min-width: 767px) { 
     .body{
         width: 25rem !important;
@@ -25,8 +25,6 @@ $COLOR_SCONDARY: #DBEDF0;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(255,255,255, 0.9);
-    border: 2px solid $COLOR_PRIMARY;
-    border-radius: 5px;
 }
 
 .title{
@@ -34,19 +32,4 @@ $COLOR_SCONDARY: #DBEDF0;
     font-size: 1.6rem;
     color: $COLOR_PRIMARY;
     border-bottom: 1px solid $COLOR_PRIMARY;
-}
-
-.ranking_label{
-    padding: 1rem;
-    font-size: 1.5rem;
-}
-
-.ranking{
-    font-size: 2rem;
-    padding: 0.5rem;
-    font-weight: bold;
-}
-
-.time{
-    color: $COLOR_PRIMARY;
 }

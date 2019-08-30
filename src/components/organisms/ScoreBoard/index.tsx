@@ -25,27 +25,17 @@ export const ScoreBoard: React.FC<IScoreBoard> = ({
   const [name, setName] = useState<string>("Guest");
   const [message, setMessage] = useState<string>("");
   const [ranking, setRanking] = useState<number>(0);
+  const [scoreRankingList, setScoreRankingList] = useState([
+    { name: "Null", time: Infinity }
+  ]);
   const score = { name: name, time: time, date: new Date() };
-  let scoreRankingList = [{name: "Null", time: Infinity}];
-
-  useEffect(() => {
-    if (name === "") {
-      setMessage("名前を入力してください");
-    } else {
-      const preTime = isUserExist(name, scoreRankingList); 
-      if (!preTime) {
-        setMessage("");
-      } else {
-        setMessage(`記録...${preTime}`);
-      }
-    }
-  }, [name]);
+  // let scoreRankingList = [{name: "Null", time: Infinity}];
 
   useEffect(() => {
     if (state === "finished") {
-      getScoreRanking().then((scoreRanking)=>{
-        scoreRankingList = scoreRanking;
-        const ranking = rankingOfAll(time, scoreRankingList);
+      getScoreRanking().then(scoreRanking => {
+        setScoreRankingList(scoreRanking);
+        const ranking = rankingOfAll(time, scoreRanking);
         if (!ranking) {
           setRanking(Infinity);
         } else {
@@ -54,6 +44,20 @@ export const ScoreBoard: React.FC<IScoreBoard> = ({
       });
     }
   }, [state]);
+
+  useEffect(() => {
+    if (name === "") {
+      setMessage("名前を入力してください");
+    } else {
+      const preTime = isUserExist(name, scoreRankingList);
+      console.log(name);
+      if (!preTime) {
+        setMessage("");
+      } else {
+        setMessage(`このユーザの記録...${preTime}`);
+      }
+    }
+  }, [name, scoreRankingList]);
 
   return (
     <div
@@ -66,7 +70,7 @@ export const ScoreBoard: React.FC<IScoreBoard> = ({
           <div className={styles.ranking_label}>
             第<span className={styles.ranking}>{ranking}</span>位
           </div>
-          <div>Time : {time}</div>
+          <div><span className={styles.time}>Time :</span> {time}</div>
           <NameForm name={name} setName={setName} />
           <small>{message}</small>
         </div>

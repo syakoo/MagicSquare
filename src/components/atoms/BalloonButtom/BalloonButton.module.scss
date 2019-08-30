@@ -1,31 +1,84 @@
-$COLOR_SCONDARY: #DBEDF0;
+$COLOR_SCONDARY: #dbedf0;
 
-.normal{
-    position: absolute;
-    bottom: 0px;
-    fill: #4699CA;
-    cursor: pointer;
-    text{
-        color: $COLOR_SCONDARY;
-        font-size: 1.6rem;
+.normal {
+  position: fixed;
+  bottom: 0px;
+  fill: #4699ca;
+  cursor: pointer;
+  z-index: 11;
+  text {
+    color: $COLOR_SCONDARY;
+    font-size: 1.6rem;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  circle {
+    r: 140px;
+    cy: 200px;
+  }
+  svg {
+    transform: translate(0px, 4px);
+  }
+}
+
+.empha {
+  position: fixed;
+  bottom: 0px;
+  fill: #1760a0;
+  cursor: pointer;
+  z-index: 11;
+
+  text {
+    color: $COLOR_SCONDARY;
+    font-size: 3rem;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  circle {
+    r: 180px;
+    cy: 200px;
+  }
+  svg {
+    transform: translate(0px, 4px);
+  }
+}
+
+.left {
+  left: 0px;
+  circle {
+    cx: 70px;
+  }
+  text {
+    transform: translate(20px, 120px);
+  }
+}
+
+.right {
+  right: 0px;
+  circle {
+    cx: 200px;
+  }
+  text {
+    transform: translate(90px, 120px);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .normal {
+    width: 50% !important;
+    svg {
+        width: 100% !important;
+      }
+  }
+  .empha {
+    width: 70% !important;
+    svg {
+      width: 100% !important;
+      g {
+        transform: translate(0%, 0px);
+      }
     }
-}
-
-.empha{
-    position: absolute;
-    bottom: 0px;
-    fill: #1760A0;
-    cursor: pointer;
-    text{
-        color: $COLOR_SCONDARY;
-        font-size: 3rem;
-    }
-}
-
-.left{
-    left: 0px;
-}
-
-.right{
-    right: 0px;
+  }
 }

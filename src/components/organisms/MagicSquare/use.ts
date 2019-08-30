@@ -99,13 +99,21 @@ export const useMagicSquare = () => {
             case "playing":
                 console.log("playing !!");
                 intervalId.push(setInterval(() => {
-                    setTime((Math.round((Date.now() - startTime) / 100) / 10).toFixed(1));
+                    const time = (Date.now() - startTime);
+                    if(time>120000){
+                        setState("gameover");
+                    }
+                    setTime((Math.round(time / 100) / 10).toFixed(1));
                 }, 100));
                 console.log(intervalId);
                 break;
             case "finished":
                 console.log("finished !!", Date.now() - startTime);
                 setTime(((Date.now() - startTime) / 1000).toFixed(3));
+                intervalId = clearAllInterval(intervalId);
+                break;
+            case "gameover":
+                console.log("gameover !!", Date.now() - startTime);
                 intervalId = clearAllInterval(intervalId);
                 break;
         }
@@ -116,7 +124,7 @@ export const useMagicSquare = () => {
     }, [stateBoard]);
 
     useEffect(()=>{
-        if(location.pathname=="/game"){
+        if(location.pathname==="/game"){
             setState("standby");
         }
     },[location.pathname])

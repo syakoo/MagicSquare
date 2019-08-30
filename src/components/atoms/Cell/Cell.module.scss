@@ -1,35 +1,37 @@
-$COLOR_PRIMARY: #002D5E;
+$COLOR_PRIMARY: #002d5e;
 
-@media screen and (min-width: 767px) { 
-  .cell{
+@media screen and (min-width: 767px) {
+  .cell {
     width: 18vmin !important;
     height: 18vmin !important;
     font-size: 8vmin !important;
   }
 }
 
-.cell{
-    width: 28vmin;
-    height: 28vmin;
-    min-width: 10%;
-    min-height: 4rem;
-    font-size: 10vmin;
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-    border: 3px solid $COLOR_PRIMARY;
-    cursor: pointer;
-    user-select: none;
+.cell {
+  width: 20vmin;
+  height: 20vmin;
+  min-width: 10%;
+  min-height: 4rem;
+  font-size: 10vmin;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  border: 3px solid $COLOR_PRIMARY;
+  cursor: pointer;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 
-    &.static{
-      background-color: #8DABC5;  
-    }
-    
-    &.variable{
-      background-color: #DBEDF0;  
-    }
+  &.static {
+    background-color: #8dabc5;
+  }
 
-    &.variable:hover{
-        background-color: rgb(195, 230, 236);  
-    }
+  &.variable {
+    background-color: #dbedf0;
+  }
+
+  &.variable:hover {
+    background-color: rgb(195, 230, 236);
+  }
 }

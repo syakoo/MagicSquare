@@ -6,13 +6,11 @@ interface IScore {
     date?: Date;
 }
 
-let scoreRankingBoard = fireStore.collection('score_board_3');
-
 export const getScoreRanking = async () => {
     console.log("call getScoreRanking");
     let scoreRanking: any[] = [];
 
-    await scoreRankingBoard.orderBy("time").get()
+    await fireStore.collection('score_board_3').orderBy("time").get()
         .then(snapshot => {
             if (snapshot.empty) {
                 console.log("No matching documents. XD");
@@ -78,10 +76,10 @@ export const isUserExist = (userName: string, scoreRankingList: IScore[]) => {
 export const setScoreRanking = (score: IScore, scoreRankingList:IScore[]) => {
     const preTime = isUserExist(score.name, scoreRankingList);
     if (!preTime) {
-        scoreRankingBoard.doc(score.name).set(score);
+        fireStore.collection('score_board_3').doc(score.name).set(score);
     } else {
         if (preTime >= score.time) {
-            scoreRankingBoard.doc(score.name).set(score);
+            fireStore.collection('score_board_3').doc(score.name).set(score);
         } else {
             console.log("前回のスコアの方が良いため、更新しませんでした。");
         }
