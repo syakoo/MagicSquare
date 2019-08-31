@@ -1,37 +1,10 @@
 import { useEffect, useState } from "react";
 import useReactRouter from "use-react-router";
 
-import { IState, IBoard } from "../Board";
+import { IState } from "../Board";
+import { IBoard } from "../../../types";
+import { getProblem } from "../../../logics/util/MagicSquare";
 import { IsGameFinished } from "../../../logics/util/board";
-
-export const createBoard = (level = 3) => {
-    const initialState: IBoard = [
-        { value: 5, type: "static" },
-        { value: 0, type: "variable" },
-        { value: 5, type: "static" },
-        { value: 0, type: "variable" },
-        { value: 5, type: "static" },
-        { value: 0, type: "variable" },
-        { value: 5, type: "static" },
-        { value: 5, type: "static" },
-        { value: 5, type: "static" }
-    ]
-
-    const answerState: IBoard = [
-        { value: 5 },
-        { value: 5 },
-        { value: 5 },
-        { value: 5 },
-        { value: 5 },
-        { value: 5 },
-        { value: 5 },
-        { value: 5 },
-        { value: 5 }
-    ]
-
-    return [initialState,
-        answerState];
-}
 
 const clearAllInterval = (intervalIdArray: NodeJS.Timeout[]): NodeJS.Timeout[] => {
     intervalIdArray.forEach(target => {
@@ -81,7 +54,7 @@ export const useMagicSquare = () => {
         switch (state) {
             case "standby":
                 console.log("standby !!");
-                [initialState, answerState] = createBoard();
+                [initialState, answerState] = getProblem(4);
                 setStateBoard(initialState);
                 intervalId = clearAllInterval(intervalId);
                 let readyCounter = readyCount();

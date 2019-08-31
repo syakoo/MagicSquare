@@ -1,15 +1,9 @@
 import React from "react";
 import types from "./Cell.module.scss";
 
-export interface Cell {
-  key?: number;
-  id?: number;
-  value: number;
-  type?: "static" | "variable";
-  clickEventHandler?: () => void;
-}
+import { ICell } from "../../../types"
 
-export const Cell: React.FC<Cell> = ({
+export const Cell: React.FC<ICell> = ({
   id,
   value,
   type,

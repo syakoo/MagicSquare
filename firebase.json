@@ -4,6 +4,7 @@
   },
   "hosting": {
     "public": "build",
+    "site": "magic-square",
     "ignore": [
       "firebase.json",
       "**/.*",

@@ -1,4 +1,4 @@
-import { IBoard } from "../../components/organisms/Board";
+import {IBoard} from "../../types";
 
 export const IsGameFinished = (boardState: IBoard, answerState: IBoard): Boolean => {
     for(let i=0; i<boardState.length; i++){

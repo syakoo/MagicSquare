@@ -1,10 +1,10 @@
 import React, { Dispatch } from "react";
 
 import { Cell } from "../../atoms/Cell";
+import { IBoard } from "../../../types";
 import styles from "./Board.module.scss";
 
 export type IState = "standby" | "playing" | "finished" | "gameover";
-export type IBoard = Cell[];
 
 export interface Board {
   state: IState;

@@ -1,123 +1,118 @@
+$COLOR_PRIMARY: #002D5E;
 $COLOR_SCONDARY: #dbedf0;
 
 .normal {
-  svg{
+  button{
     position: fixed;
     bottom: 0px;
-    fill: #4699ca;
-    cursor: pointer;
+    font-size: 4vh;
+    padding: 3vh;
     z-index: 11;
-    
-    text {
-      color: $COLOR_SCONDARY;
-      font-size: 1.7rem;
-      -ms-user-select: none;
-      -webkit-user-select: none;
-      user-select: none;
+    border: none;
+    background-color: #4699ca;
+    color: $COLOR_SCONDARY;
+    cursor: pointer;
+    &:focus{
+      outline: none;
     }
-    circle {
-      r: 100px;
-      cy: 100px;
+    &:active{
+      animation: onclick 0.2s ease 0s;
     }
-  }
-  
-  svg {
-    transform: translate(0px, 4px);
   }
 }
 
 .empha {
-  position: fixed;
-  bottom: 0px;
-  fill: #1760a0;
-  cursor: pointer;
-  z-index: 11;
-
-  text {
+  button{
+    position: fixed;
+    bottom: 0px;
+    font-size: 6vh;
+    padding: 4vh;
+    z-index: 11;
     color: $COLOR_SCONDARY;
-    font-size: 2rem;
-    -ms-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-  }
-  circle {
-    r: 180px;
-    cy: 180px;
-  }
-  svg {
-    transform: translate(0px, 4px);
+    border: none;
+    background-color:  #1760a0;
+    cursor: pointer;
+    &:focus{
+      outline: none;
+    }
+    &:active{
+      animation: onclick 0.2s ease 0s;
+    }
   }
 }
 
 .left {
-  svg{
+  button{
     left: 0px;
-    circle {
-      cx: 70px;
-    }
-    text {
-      text-anchor: start;
-      transform: translate(30px, 100px);
-    }
+    padding-right: 10vh;
+    border-radius: 0px 30vh 0px 0px;
   }
 }
 
 .right {
-  right: 0px;
-  circle {
-    cx: 200px;
-  }
-  text {
-    text-anchor: end;
-    transform: translate(90%, 100px);
+  button{
+    right: 0px;
+    padding-left: 10vh;
+    border-radius: 50vh 0px 0px 0px;
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 420px) {
   .normal {
-    width: 50% !important;
-    svg {
-      width: 100% !important;
-      text{
-        font-size: 1.4rem;    
-        transform: translate(40px, 70px) !important;
+    button{
+      position: fixed;
+      z-index: 11;
+      bottom: 0px;
+      font-size: 5vw;
+      padding: 5vw;
+      &:focus{
+        outline: none;
       }
-      g{
-        transform: translate(-20px, 30px) !important;
+      &:active{
+        animation: onclick 0.2s ease 0s;
       }
-      }
+    }
   }
   .empha {
-    width: 70% !important;
-    svg {
-      width: 100% !important;
-      text{
-        font-size: 1.5rem;
+    button{
+      position: fixed;
+      z-index: 11;
+      bottom: 0px;
+      font-size: 8vw;
+      padding: 7vw;
+      color: $COLOR_SCONDARY;
+      border: 1px solid  #1760a0;
+      background-color:  #1760a0;
+      &:focus{
+        outline: none;
       }
-      g {
-        transform: translate(0px, 30px) !important;
+      &:active{
+        animation: onclick 0.2s ease 0s;
       }
     }
   }
   .left {
-    svg{
+    button{
       left: 0px;
-      circle {
-        cx: 70px;
-      }
-      text {
-        transform: translate(30px, 100px);
-      }
+      padding-right: 15vw;
+      border-radius: 0px 60vw 0px 0px;
     }
   }
+  
   .right {
-    right: 0px;
-    circle {
-      cx: 200px;
-    }
-    text {
-      transform: translate(90%, 80px)!important;
+    button{
+      right: 0px;
+      padding-left: 15vw;
+      border-radius: 60vw 0px 0px 0px;
     }
   }
 }
 
+@keyframes onclick{
+  0%{
+  }
+  100%{
+    // border: 5px solid $COLOR_SCONDARY;
+    background-color: $COLOR_SCONDARY;
+  }
+}

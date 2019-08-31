@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import useReactRouter from "use-react-router";
 
 import {BalloonButton} from "../../atoms/BalloonButtom";
+import {Button} from "../../atoms/Button";
 import { getScoreRanking } from "../../../logics/util/fireStore";
 import styles from "./Ranking.module.scss";
 
