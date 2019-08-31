@@ -1,6 +1,6 @@
 # Magic Square
 ３×３の魔法陣を解くタイムを競うWebアプリです。
-(デモページ)[https://magic-square.firebaseapp.com/]
+[デモページ](https://magic-square.firebaseapp.com/)
 
 ## コードを見る前に
 このアプリはTypeScript+React+Firebaseを使ったSPAの練習として作ったアプリです。コードは参考にならない可能性が十分にあるのでご了承ください。
