@@ -1,0 +1,47 @@
+$COLOR_PRIMARY: #002d5e;
+$COLOR_SCONDARY: #dbedf0;
+
+.title {
+  font-size: 2rem;
+  color: $COLOR_SCONDARY;
+  padding-bottom: 1rem;
+}
+
+.link_title {
+  padding-bottom: 0.3rem;
+  font-size: 1.3rem;
+}
+
+.link {
+  display: block;
+  color: $COLOR_PRIMARY;
+}
+
+.info_link {
+  color: $COLOR_SCONDARY;
+}
+
+.help_list {
+  padding: 1rem;
+  margin: 1rem;
+  border: 2px solid $COLOR_SCONDARY;
+  border-radius: 10px;
+  color: $COLOR_SCONDARY;
+  background-color: rgba(200, 220, 255, 0.5);
+}
+
+.ver {
+  margin-top: 1rem;
+  &::before {
+    content: "-------";
+  }
+  &::after {
+    content: "-------";
+  }
+}
+
+.twitter {
+  height: 1.3rem;
+  display: inline-block;
+  vertical-align: middle;
+}

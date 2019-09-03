@@ -1,4 +1,4 @@
-$COLOR_PRIMARY: #002D5E;
+$COLOR_PRIMARY: #002d5e;
 
 .header {
   position: fixed;
@@ -8,14 +8,14 @@ $COLOR_PRIMARY: #002D5E;
   padding: 0.2rem;
   z-index: 100;
   background-color: $COLOR_PRIMARY;
-  border-bottom: 3px solid #DBEDF0; 
+  border-bottom: 3px solid #dbedf0;
 }
 
-.div{
+.div {
   display: table;
 }
 
-.logo{
+.logo {
   height: 2.1rem;
   vertical-align: middle;
 }
@@ -28,9 +28,23 @@ $COLOR_PRIMARY: #002D5E;
   -webkit-text-stroke: 1px white;
   border-bottom: 1px solid white;
   color: $COLOR_PRIMARY;
-  
+
   &:hover {
     -webkit-text-stroke: 1px #79dcf2;
     color: #79dcf2;
+  }
+}
+
+.help {
+  // font-size: 1.5rem;
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  img {
+    height: 1.5rem;
+    vertical-align: middle;
   }
 }
