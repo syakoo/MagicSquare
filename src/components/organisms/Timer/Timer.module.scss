@@ -1,0 +1,13 @@
+$COLOR_SCONDARY: #DBEDF0;
+
+.time{
+    font-size: 2.5rem;
+    color: $COLOR_SCONDARY;
+    padding: 0.5rem;
+    cursor: default;
+
+    span{
+        padding-right: 1rem;
+        font-size: 1.5rem;
+    }
+}

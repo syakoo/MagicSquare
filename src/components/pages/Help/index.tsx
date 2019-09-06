@@ -1,4 +1,4 @@
-import React, { ReactPropTypes } from "react";
+import React from "react";
 import { Route, Link } from "react-router-dom";
 import useReactRouter from "use-react-router";
 
@@ -55,7 +55,11 @@ const list = [
 const HelpList: React.FC<{}> = () => {
   const howtoplayList = list.map((value, index) => {
     return (
-      <Link to={`/help/walk-through/${index}`} className={styles.link}>
+      <Link
+        key={index}
+        to={`/help/walk-through/${index}`}
+        className={styles.link}
+      >
         {index}. {value.title}
       </Link>
     );
@@ -81,6 +85,7 @@ const HelpPage: React.FC<{}> = (pr: any) => {
   const changeBtn = list.map((value, index) => {
     return (
       <Button
+        key={index}
         label={"" + index}
         onClick={() => {
           history.push(`/help/walk-through/${index}`);

@@ -1,16 +1,14 @@
 import React from "react";
 import types from "./Cell.module.scss";
 
-import { ICell } from "../../../types"
+import { ICell } from "../../../types";
 
 export const Cell: React.FC<ICell> = ({
-  id,
   value,
   type,
   clickEventHandler = () => {}
 }) => {
-  
-  const output = value===0 ? "" : value;
+  const output = value === 0 ? "" : value;
 
   if (type === "variable") {
     return (

@@ -1,26 +1,10 @@
 import { useEffect, useState } from "react";
 import useReactRouter from "use-react-router";
 
-import { IState } from "../Board";
-import { IBoard } from "../../../types";
+import { IBoard, IState } from "../../../types";
 import { getProblem } from "../../../logics/util/MagicSquare";
 import { IsGameFinished } from "../../../logics/util/board";
 
-const clearAllInterval = (intervalIdArray: NodeJS.Timeout[]): NodeJS.Timeout[] => {
-    intervalIdArray.forEach(target => {
-        clearInterval(target);
-    });
-    return [];
-}
-
-function* readyCount() {
-    yield "3";
-    yield "2";
-    yield "1";
-}
-
-let startTime = 0;
-let intervalId: NodeJS.Timeout[] = [];
 let initialState: IBoard = [
     { value: 5, type: "static" },
     { value: 0, type: "variable" },
@@ -56,38 +40,15 @@ export const useMagicSquare = () => {
                 console.log("standby !!");
                 [initialState, answerState] = getProblem(4);
                 setStateBoard(initialState);
-                intervalId = clearAllInterval(intervalId);
-                let readyCounter = readyCount();
-                let id = setInterval(() => {
-                    let val = readyCounter.next();
-                    if (!val.done) {
-                        setTime(val.value);
-                    } else {
-                        startTime = Date.now();
-                        setState("playing");
-                        clearInterval(id);
-                    }
-                }, 1000)
                 break;
             case "playing":
                 console.log("playing !!");
-                intervalId.push(setInterval(() => {
-                    const time = (Date.now() - startTime);
-                    if(time>120000){
-                        setState("gameover");
-                    }
-                    setTime((Math.round(time / 100) / 10).toFixed(1));
-                }, 100));
-                console.log(intervalId);
                 break;
             case "finished":
-                console.log("finished !!", Date.now() - startTime);
-                setTime(((Date.now() - startTime) / 1000).toFixed(3));
-                intervalId = clearAllInterval(intervalId);
+                console.log("finished !!");
                 break;
             case "gameover":
-                console.log("gameover !!", Date.now() - startTime);
-                intervalId = clearAllInterval(intervalId);
+                console.log("gameover !!");
                 break;
         }
     }, [state]);
@@ -96,17 +57,18 @@ export const useMagicSquare = () => {
         if (IsGameFinished(stateBoard, answerState)) setState("finished");
     }, [stateBoard]);
 
-    useEffect(()=>{
-        if(location.pathname==="/game"){
+    useEffect(() => {
+        if (location.pathname === "/game") {
             setState("standby");
         }
-    },[location.pathname])
-    
+    }, [location.pathname])
+
 
     return {
         state,
         setState,
         time,
+        setTime,
         stateBoard,
         setStateBoard
     };
