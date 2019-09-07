@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import useReactRouter from "use-react-router";
 
 import { BalloonButton } from "../../atoms/BalloonButtom";
+import { Loading } from "../../atoms/Loading";
 import { getScoreRanking } from "../../../logics/util/fireStore";
 import styles from "./Ranking.module.scss";
 
@@ -25,6 +26,9 @@ export const Ranking: React.FC<{}> = () => {
   }, [location.pathname]);
 
   const rankingList = scoreRankingList.map((score, index) => {
+    if (score.name === "null" && index===0){
+      return <Loading isLoading={true}></Loading>
+    }
     return (
       <div key={index + 1} className={styles.tr}>
         <div className={styles.td}>{index + 1}</div>
