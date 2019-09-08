@@ -18,7 +18,7 @@ export const GameOver: React.FC<IGameOver> = React.memo(
         style={isDisplay ? {} : { display: "none" }}
       >
         <div className={styles.body}>
-          <div className={styles.title}>ゲームオーバー!!</div>
+          <div className={styles.title}>Game Over</div>
           <Button label="もう一度" onClick={() => setState("standby")}></Button>
         </div>
       </div>

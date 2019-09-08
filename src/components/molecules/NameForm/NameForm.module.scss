@@ -1,11 +1,16 @@
 $COLOR_PRIMARY: #002D5E;
+$COLOR_SCONDARY: #DBEDF0;
+$COLOR_LABEL: #8DABC5;
 
-.label{
-    color: $COLOR_PRIMARY;
-}
 
 .input{
-    border: 1px solid $COLOR_PRIMARY;
-    border-radius: 2px;
-    padding: 2px;
+    font-size: 1.3rem;
+    padding: 0.2rem;
+    top: 0px;
+    left: 0px;
+    border: 0px;
+    border-bottom: 2px solid $COLOR_LABEL;
+    background-color: rgba(0,0,0,0);
+    color: $COLOR_SCONDARY;
+    outline: none;
 }

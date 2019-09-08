@@ -7,15 +7,15 @@ export const NameForm: React.FC<{
   setName: Dispatch<string>;
 }> = ({ name, setName }) => {
   return (
-    <div>
-      <label className={styles.label}>Name: </label>
+    <>
       <input
         className={styles.input}
         value={name}
         onChange={e => {
           setName(e.target.value);
         }}
+        spellCheck={false}
       ></input>
-    </div>
+    </>
   );
 };

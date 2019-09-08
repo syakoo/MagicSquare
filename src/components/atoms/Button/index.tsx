@@ -22,3 +22,19 @@ export const Button: React.FC<IButton> = ({
     </button>
   );
 };
+
+
+export const WideButton: React.FC<IButton> = ({
+  label,
+  onClick,
+  isEmpha = false
+}) => {
+  return (
+    <button
+      className={isEmpha ? styles.wideEmpha : styles.wideNormal}
+      onClick={onClick}
+    >
+      {label}
+    </button>
+  );
+};

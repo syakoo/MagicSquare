@@ -1,10 +1,17 @@
 $COLOR_PRIMARY: #002d5e;
+$COLOR_SCONDARY: #dbedf0;
 
-.header {
+
+.fixed{
   position: fixed;
   width: 100%;
   top: 0px;
   left: 0px;
+
+}
+
+.header {
+  width: 100%;
   padding: 0.2rem;
   z-index: 100;
   background-color: $COLOR_PRIMARY;
@@ -47,4 +54,14 @@ $COLOR_PRIMARY: #002d5e;
     height: 1.5rem;
     vertical-align: middle;
   }
+}
+
+.user {
+  float: right;
+  font-size: 1.2rem;
+  padding: 0rem 1.4rem 0.2rem 2rem;
+  background-color: $COLOR_SCONDARY;
+  border-bottom-left-radius: 5rem;
+  color: $COLOR_PRIMARY;
+  cursor: default;
 }

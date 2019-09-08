@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import useReactRouter from "use-react-router";
 
-import { IBoard, IState } from "../../../types";
+import { IBoard, IState, Imode } from "../../../types";
 import { getProblem } from "../../../logics/util/MagicSquare";
 import { IsGameFinished } from "../../../logics/util/board";
 
@@ -28,7 +28,7 @@ let answerState: IBoard = [
     { value: 5 }
 ];
 
-export const useMagicSquare = () => {
+export const useMagicSquare = (mode: Imode) => {
     const [state, setState] = useState<IState>("standby");
     const [time, setTime] = useState<string>("0");
     const [stateBoard, setStateBoard] = useState<IBoard>(initialState);
@@ -38,7 +38,7 @@ export const useMagicSquare = () => {
         switch (state) {
             case "standby":
                 console.log("standby !!");
-                [initialState, answerState] = getProblem(4);
+                [initialState, answerState] = getProblem(mode);
                 setStateBoard(initialState);
                 break;
             case "playing":
@@ -58,7 +58,7 @@ export const useMagicSquare = () => {
     }, [stateBoard]);
 
     useEffect(() => {
-        if (location.pathname === "/game") {
+        if (location.pathname === "/game/hard" || location.pathname === "/game/normal") {
             setState("standby");
         }
     }, [location.pathname])

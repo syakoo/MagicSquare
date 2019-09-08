@@ -10,3 +10,5 @@ export interface ICell {
 export type IBoard = ICell[];
 
 export type IState = "standby" | "playing" | "finished" | "gameover";
+
+export type Imode = "normal" | "hard";

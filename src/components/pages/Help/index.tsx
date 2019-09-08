@@ -133,6 +133,10 @@ const HelpInfo: React.FC<{}> = () => {
       <div className={styles.help_list}>
         <div className={styles.link_title}>Magic Square</div>
         <div>
+          <div className={styles.ver}>ver 2.0</div>
+          レベル選択を実装、UIの変更、データベースの変更
+        </div>
+        <div>
           <div className={styles.ver}>ver 1.1</div>
           ヘルプページの追加
         </div>

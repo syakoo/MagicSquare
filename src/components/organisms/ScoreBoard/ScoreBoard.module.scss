@@ -1,5 +1,7 @@
 $COLOR_PRIMARY: #002D5E;
 $COLOR_SCONDARY: #DBEDF0;
+$COLOR_LABEL: #8DABC5;
+
 
 .all{
     position:fixed;
@@ -33,18 +35,37 @@ $COLOR_SCONDARY: #DBEDF0;
     padding-bottom: 0.5rem;
     font-size: 1.6rem;
     color: $COLOR_PRIMARY;
+    font-weight: bold;
     border-bottom: 1px solid $COLOR_PRIMARY;
 }
 
 .ranking_label{
     padding: 1rem;
     font-size: 1.5rem;
+    color: $COLOR_LABEL;
 }
 
 .ranking{
     font-size: 2rem;
     padding: 0.5rem;
+    color: $COLOR_PRIMARY;
     font-weight: bold;
+}
+
+.newrecord{
+    color: $COLOR_PRIMARY;
+    font-weight: bold;
+}
+
+.mode{
+    padding: 0.5rem;
+    color: $COLOR_PRIMARY;
+    &::before{
+        content: "-"
+    }
+    &::after{
+        content: "-"
+    }
 }
 
 .time{

@@ -1,0 +1,17 @@
+$COLOR_SCONDARY: #dbedf0;
+$COLOR_LABEL: #8DABC5;
+
+.select_box{
+    color: $COLOR_LABEL;
+    padding: 0.5rem;
+    & .title{
+        padding: 1rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+}
+
+.message{
+  font-size: 0.8rem;
+  padding: 0.5rem;
+}
