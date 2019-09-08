@@ -18,7 +18,7 @@ interface IScoreBoard {
 
 export const ScoreBoard: React.FC<IScoreBoard> = React.memo(
   ({ time, isDisplay, setState, mode }) => {
-    console.log("render ScoreBoard");
+    // console.log("render ScoreBoard");
     const name = getUserName();
     const [message, setMessage] = useState<string>("");
     const [ranking, setRanking] = useState<number>(0);

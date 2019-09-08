@@ -10,7 +10,7 @@ import styles from "./Ranking.module.scss";
 import { Imode } from "../../../types";
 
 export const Ranking: React.FC<{ mode: Imode }> = ({ mode }) => {
-  console.log("render Ranking");
+  // console.log("render Ranking");
   const [scoreRankingList, setScoreRankingList] = useState<any[]>([
     { name: "null", time: Infinity }
   ]);

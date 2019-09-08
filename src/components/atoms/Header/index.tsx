@@ -8,7 +8,7 @@ import logo from "../../../assets/icons/logo.svg";
 import help from "../../../assets/icons/help.svg";
 
 export const Header: React.FC<{}> = () => {
-  console.log("render Header");
+  // console.log("render Header");
   return (
     <>
       <header className={styles.fixed}>

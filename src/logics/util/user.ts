@@ -5,5 +5,10 @@ export const setUserName = (username: string) => {
 }
 
 export const getUserName = () => {
-    return AppLocalStorage.getItem("user");
+    let userName = AppLocalStorage.getItem("user");
+    if(userName==="null"){
+        userName="Guest";
+        setUserName(userName);
+    }
+    return userName;
 }

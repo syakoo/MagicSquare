@@ -11,7 +11,7 @@ import styles from "./LevelSelect.module.scss";
 
 export const LevelSelect: React.FC<{}> = () => {
   const { history } = useReactRouter();
-  const [name, setName] = useState<string>(getUserName() || "Guest");
+  const [name, setName] = useState<string>(getUserName());
   const [message, setMessage] = useState<string>("");
 
   useEffect(() => {

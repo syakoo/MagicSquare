@@ -12,7 +12,7 @@ export interface Board {
 
 export const Board: React.FC<Board> = React.memo(
   ({ state, stateBoard, setStateBoard }) => {
-    console.log("reander Board");
+    // console.log("reander Board");
     // Cell click event
     const ClickEventHandler = (i: number) => {
       let newState = stateBoard.map((items, index) => {

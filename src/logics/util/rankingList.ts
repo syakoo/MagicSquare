@@ -92,6 +92,7 @@ class rankingList {
     constructor(mode: Imode) {
         this.mode = mode;
         this.key = (mode === "normal") ? "rankingListNormal" : "rankingListHard";
+        this.loadScoreRanking();
     }
 
     public setRankingList = (rankingList: rankingData[]) => {
@@ -124,7 +125,7 @@ class rankingList {
     }
 
     public loadScoreRanking = async () => {
-        console.log("call getScoreRanking");
+        // console.log("call getScoreRanking");
         let scoreRanking: any[] = [];
 
         await getDB(this.mode)
@@ -141,7 +142,7 @@ class rankingList {
             .catch(err => {
                 console.log("Error getting Ranking", err);
             });
-        console.log(scoreRanking);
+        // console.log(scoreRanking);
         scoreRanking.sort((a, b) => {
             return (a.total.time > b.total.time) ? 1 : -1;
         })
@@ -151,7 +152,7 @@ class rankingList {
     }
 
     public setScoreRanking = (name: string, score: IScore) => {
-        console.log("call setScoreRanking");
+        // console.log("call setScoreRanking");
         const data: rankingData = {
             name: name,
             total: score
@@ -171,7 +172,7 @@ class rankingList {
 
 }
 
-console.log("rankingList.ts");
+// console.log("rankingList.ts");
 
 export const rankingListNormal = new rankingList("normal");
 export const rankingListHard = new rankingList("hard");

@@ -11,7 +11,7 @@ import { Timer } from "../Timer";
 import { Imode } from "../../../types";
 
 export const MagicSquare: React.FC<{mode: Imode}> = React.memo(({mode}) => {
-  console.log("render MagicSuare");
+  // console.log("render MagicSuare");
   const {
     state,
     setState,

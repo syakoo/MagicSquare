@@ -28,7 +28,7 @@ interface ITimer extends React.Props<{}> {
 
 export const Timer: React.FC<ITimer> = React.memo(
   ({ state, setState, setTime }) => {
-    console.log("render Timer");
+    // console.log("render Timer");
     const [stopWatch, setStopWatch] = useState<string>("0");
 
     useEffect(() => {
@@ -57,7 +57,7 @@ export const Timer: React.FC<ITimer> = React.memo(
               setStopWatch((Math.round(time / 100) / 10).toFixed(1));
             }, 100)
           );
-          console.log(intervalId);
+          // console.log(intervalId);
           break;
         case "finished":
           setTime(((Date.now() - startTime) / 1000).toFixed(3));

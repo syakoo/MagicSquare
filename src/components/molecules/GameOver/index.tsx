@@ -11,7 +11,7 @@ interface IGameOver {
 
 export const GameOver: React.FC<IGameOver> = React.memo(
   ({ isDisplay, setState }) => {
-    console.log("render GameOver");
+    // console.log("render GameOver");
     return (
       <div
         className={styles.all}
